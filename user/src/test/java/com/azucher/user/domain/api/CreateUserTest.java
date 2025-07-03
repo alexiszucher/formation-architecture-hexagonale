@@ -2,7 +2,7 @@ package com.azucher.user.domain.api;
 
 import com.azucher.user.domain.api.createuser.CreateUserUseCase;
 import com.azucher.user.domain.api.createuser.UserCreatorUseCase;
-import com.azucher.user.domain.spi.InMemoryUserRepository;
+import com.azucher.user.infrastructure.InMemoryUserRepository;
 import com.azucher.user.domain.spi.UserRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

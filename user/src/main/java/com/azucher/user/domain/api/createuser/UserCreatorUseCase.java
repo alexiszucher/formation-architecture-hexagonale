@@ -2,7 +2,9 @@ package com.azucher.user.domain.api.createuser;
 
 import com.azucher.user.domain.User;
 import com.azucher.user.domain.spi.UserRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserCreatorUseCase implements CreateUserUseCase {
     private final UserRepository userRepository;
 

@@ -3,7 +3,7 @@ package com.azucher.user.domain.api;
 import com.azucher.user.domain.User;
 import com.azucher.user.domain.api.findallusers.FindAllUsersUseCase;
 import com.azucher.user.domain.api.findallusers.UserFinderUseCase;
-import com.azucher.user.domain.spi.InMemoryUserRepository;
+import com.azucher.user.infrastructure.InMemoryUserRepository;
 import com.azucher.user.domain.spi.UserRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
