@@ -17,4 +17,24 @@ public class CreateUserTest {
         useCase.create("Zucher", "Alexis");
         Assertions.assertEquals(1, repository.findAll().size());
     }
+
+    @Test
+    void givenEmptyFirstName_shouldFail() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+                useCase.create("Zucher", "");
+        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            useCase.create("Zucher", null);
+        });
+    }
+
+    @Test
+    void givenEmptyLastName_shouldFail() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            useCase.create("", "Alexis");
+        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            useCase.create(null, "Alexis");
+        });
+    }
 }

@@ -27,4 +27,17 @@ public class UserWSTest {
         mockMvc.perform(MockMvcRequestBuilders.post("/users").contentType(MediaType.APPLICATION_JSON).content(userJsonBody))
                 .andExpect(MockMvcResultMatchers.status().isCreated());
     }
+
+    @Test
+    void givenFirstnameOrLastNameEmpty_shouldFail() throws Exception {
+        String userJsonBody = """
+                {
+                    "lastname": "Zucher",
+                    "firstname": ""
+                }
+                """;
+
+        mockMvc.perform(MockMvcRequestBuilders.post("/users").contentType(MediaType.APPLICATION_JSON).content(userJsonBody))
+                .andExpect(MockMvcResultMatchers.status().isBadRequest());
+    }
 }
