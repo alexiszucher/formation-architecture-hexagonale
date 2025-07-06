@@ -21,28 +21,11 @@ public class HibernateUser {
         this.firstname = firstname;
     }
 
-
-    public Long getId() {
-        return id;
-    }
-
     public String getLastname() {
         return lastname;
     }
 
     public String getFirstname() {
         return firstname;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
     }
 }

@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 @SpringBootTest
 public class HibernateUserRepositoryTest {
     private final static User ALEXIS_USER = new User("Zucher", "Alexis");
@@ -27,8 +29,14 @@ public class HibernateUserRepositoryTest {
     @Test
     void shouldCreateUser() {
         Assertions.assertEquals(0, repository.findAll().size());
+
         repository.create(ALEXIS_USER);
-        Assertions.assertEquals(1, repository.findAll().size());
+
+        List<User> users = repository.findAll();
+        Assertions.assertEquals(1, users.size());
+        User userCreated = users.get(0);
+        Assertions.assertEquals(ALEXIS_USER.lastname(), userCreated.lastname());
+        Assertions.assertEquals(ALEXIS_USER.firstname(), userCreated.firstname());
     }
 
     @Test
